@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link href='https://fonts.googleapis.com/css?family=Spartan' rel='stylesheet'>
+    <link href="style.css" rel="stylesheet">
+    <title>Kanom Sai Yai</title>
+  </head>
+  <body>
+    <script>
+      let word_standard = "";
+
+      function handleOnMouseIn(event) {
+          word_standard = event.target.textContent;
+          event.target.textContent = "ยังไม่พร้อมใช้งาน";
+      };
+
+      function handleOnMouseOut(event) {
+          event.target.textContent = word_standard;
+      };
+
+      let isShow = false;
+      function handleOnclick(event) {
+        if (!isShow) {
+          document.getElementById("boxpp").style.transform = "translate(-50%,400%)";
+          document.getElementById("boxpp").style.visibility = "visible";
+          isShow = true; 
+        }
+        setTimeout(() => {
+          document.getElementById("boxpp").style.transform = "translate(-50%,500%)";
+          document.getElementById("boxpp").style.visibility = "hidden";
+          isShow = false;
+        }, 5000);
+      }
+    </script>
+    
+    <nav id="header">
+      <div class="navHead">
+          <div class="navTop">
+              <div class="navLogo">
+                  <a href="index.html" class="navInnerLogo">
+                      <img src="img/logo.png" width="150px" height="130px" />
+                  </a>
+              </div>
+          </div>
+          <div>
+              <ul id="navbar">
+                  <li ><a class="active" href="SaiYaiBakery.html">Home</a></li>
+                      <li class="containerForShopMenuList">
+                          <a href="#" id="shop">
+                              สินค้า
+                          </a>
+                          <div class="sliderCateMenu">
+                              <div class="ItemCate">
+                                  <h1>หมวดหมู่</h1>
+                                  <ul class="list-sliderCateMenu">
+                                      <li><a class="li-Cate" href="cake.html" onmouseover="handleOnMouseIn(event)" onmouseout="handleOnMouseOut(event)">เค้ก</a></li>
+                                      <li><a class="li-Cate" href="pastry.html" onmouseover="handleOnMouseIn(event)" onmouseout="handleOnMouseOut(event)">เพสตรี้</a></li>
+                                      <li><a class="li-Cate" href="cookie.html" onmouseover="handleOnMouseIn(event)" onmouseout="handleOnMouseOut(event)">คุกกี้</a></li>
+                                      <li><a class="li-Cate" href="tart_pie.html" onmouseover="handleOnMouseIn(event)" onmouseout="handleOnMouseOut(event)">ทาร์ตและพาย</a></li>
+                                      <li><a class="li-Cate" href="weather.html" onmouseover="handleOnMouseIn(event)" onmouseout="handleOnMouseOut(event)">สินค้าตามฤดูกาล</a></li>
+                                  </ul>
+                              </div>
+                              <div class="ItemCate">
+                                  <h1>อื่นๆ</h1>
+                                  <ul class="list-sliderCateMenu">
+                                      <li><a class="li-Cate" href="cart.html" onmouseover="handleOnMouseIn(event)" onmouseout="handleOnMouseOut(event)">สินค้า</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="blurBack"></div>
+                          <div class="transpaBackDown"></div>
+                      </li>
+                  <li><a href="about.html" onmouseover="handleOnMouseIn(event)" onmouseout="handleOnMouseOut(event)">เกี่ยวกับเรา</a></li>
+                  <li><a href="contact.html" onmouseover="handleOnMouseIn(event)" onmouseout="handleOnMouseOut(event)">ติดต่อเรา</a></li>
+                  <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+    <h2 id='our_product'>💕 รายการสินค้าของเรา</h2>
+    <img id='bakeryProduct' src="img/CakeSaiYai.jpeg" />
+    
+    <section style="background-color: rgb(246, 246, 246);">
+      <footer class="section-p1">
+          <div class="col">
+              <img src="img/logo.png" width="150px" height="130px" />
+              <br/>
+              <h4>ติดต่อเรา</h4>
+              <p><strong>สถานที่:</strong> เคนซิงตัน เกษตร เเคมปัส</p>
+              <p><strong>FaceBook:</strong> Kunyapart Paosingkeaw</p>
+              <p><strong>📞:</strong> 062 9246368</p>
+              <p><strong>เวลาเปิด:</strong> 9.00-17.00 ปิดทุกวันเสาร์อาทิตย์</p>
+              
+              <div class="follow">
+                  <h4> ติดตามเรา</h4>
+                  <div class="icon">
+                      <i class="fab fa-facebook-f"></i>
+                      <i class="fab fa-instagram"></i>
+                      <i class="fab fa-twitter"></i>
+                  </div>
+              </div>
+          </div>
+          <div class="col">
+              <h4>เกี่ยวกับเรา</h4>
+              <p onclick="handleOnclick()">ข้อมูลการจัดส่ง</p>
+              <p onclick="handleOnclick()">นโยบายของเรา</p>
+              <p onclick="handleOnclick()">ติดต่อเรา</p>
+          </div>
+
+          <div class="col">
+              <h4>บัญชีของฉัน</h4>
+              <p onclick="handleOnclick()">สมัครสมาชิก</p>
+              <p onclick="handleOnclick()">ดูตะกร้าสินค้า</p>
+              <p onclick="handleOnclick()">ข่วยเหลือ</p>
+          </div>
+          <!-- <div class="col">
+              <h4>เกี่ยวกับเรา</h4>
+              <p onclick="handleOnclick()">ข้อมูลการจัดส่ง</p>
+              <a href="#" onclick="handleOnclick()">ข้อมูลการจัดส่ง</a>
+              <a href="#" >นโยบายของเรา</a>
+              <a href="#" >ติดต่อเรา</a>
+          </div>
+
+          <div class="col">
+              <h4>บัญชีของฉัน</h4>
+              <a href="#">สมัครสมาชิก</a>
+              <a href="#" >ดูตะกร้าสินค้า</a>
+              <a href="#" >ข่วยเหลือ</a>
+          </div> -->
+
+          <div class="copyright">
+              <p>© 2024, Kanom - SaiYai</p>
+          </div>
+
+          <div class="pop-box" id="boxpp">
+            <span>บริการยังไม่พร้อมใช้งาน</span>
+          </div>
+      </footer>
+    </section>
+    <!-- <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script src="https://kit.fontawesome.com/3a70579c3a.js" crossorigin="anonymous"></script> -->
+  </body>
+</html>
